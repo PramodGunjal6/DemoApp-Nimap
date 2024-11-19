@@ -6,19 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
-  user = { firstName: '', photo: '', interests: [] };
-  isEditing = false;
-
-  editProfile() {
-    this.isEditing = true;
+    userData: any = JSON.parse(localStorage.getItem('userData') || '{}');
+  
+    editMode = false;
+  
+    onEdit(): void {
+      this.editMode = true;
+    }
+  
+    onSave(): void {
+      localStorage.setItem('userData', JSON.stringify(this.userData));
+      this.editMode = false;
+    }
   }
-
-  saveProfile() {
-    this.isEditing = false;
-    // Save profile logic
-  }
-
-  editPhoto() {
-    // Allow photo editing logic
-  }
-}
+  

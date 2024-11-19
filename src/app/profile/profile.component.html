@@ -1,0 +1,12 @@
+<div *ngIf="!isEditing">
+    <p>{{ user.firstName }}</p>
+    <img [src]="user.photo" alt="Profile Photo">
+    <button (click)="editProfile()">Edit Profile</button>
+  </div>
+  
+  <div *ngIf="isEditing">
+    <input [(ngModel)]="user.firstName" placeholder="Edit Name">
+    <button (click)="editPhoto()">Edit Photo</button>
+    <button (click)="saveProfile()">Save Profile</button>
+  </div>
+  

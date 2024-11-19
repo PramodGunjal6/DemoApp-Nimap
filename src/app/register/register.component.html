@@ -1,0 +1,38 @@
+<form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+    <input formControlName="firstName" placeholder="First Name" required>
+    <mat-slider formControlName="age" min="18" max="100" step="1"></mat-slider>
+    
+    <div>
+      <label>Address Type:</label>
+      <select formControlName="addressType">
+        <option value="Home">Home</option>
+        <option value="Company">Company</option>
+      </select>
+    </div>
+  
+    <div *ngIf="registerForm.get('addressType')?.value === 'Home'">
+      <input formControlName="address1" placeholder="Address 1">
+      <input formControlName="address2" placeholder="Address 2">
+    </div>
+  
+    <div *ngIf="registerForm.get('addressType')?.value === 'Company'">
+      <input formControlName="address1" placeholder="Company Address 1">
+      <input formControlName="address2" placeholder="Company Address 2">
+    </div>
+  
+    <input type="file" (change)="onFileChange($event)" accept="image/*">
+    <div formArrayName="interests">
+        <div *ngFor="let interest of registerForm.get('interests')?.value; let i = index">
+            <input [(ngModel)]="registerForm.get('interests')?.value[i]" />
+            <button (click)="removeInterest(i)">Remove Interest</button>
+          </div>
+          
+        
+        
+
+
+    </div>
+  
+    <button type="submit" [disabled]="!registerForm.valid">Submit</button>
+  </form>
+  

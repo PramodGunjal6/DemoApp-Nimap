@@ -1,2 +1,54 @@
+<div class="homepage">
+  <header class="navbar">
+    <div class="logo">DEMO APP</div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Jobs</a>
+      <a href="#">Clients</a>
+      <a href="#">Employers</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="search-section">
+    <h1>I'm looking for...</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Enter a Job Description" />
+      <button class="search-button">Search</button>
+    </div>
+    <div class="job-types">
+      <label><input type="radio" name="job-type" /> Full Time</label>
+      <label><input type="radio" name="job-type" /> Part Time / Casual / Freelance</label>
+      <select>
+        <option>Select your Location</option>
+        <option>Location 1</option>
+        <option>Location 2</option>
+      </select>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+      <button mat-raised-button color="primary" (click)="openRegister()">Register</button>
+    </div>
+    
+  </section>
+
+  <section class="info-section">
+    <h2>We're leaders in Creative Digital Recruitment</h2>
+    <p>
+      Based in Surry Hills, the creative hub of Sydney, we are surrounded by
+      creativity that reflects on the type of jobs we recruit for.
+    </p>
+    <button class="more-info-button">Find out more about us!</button>
+  </section>
+
+  <footer class="footer">
+    <p>Subscribe to our Job Seeker Mailing List</p>
+    <div class="subscribe">
+      <input type="email" placeholder="Enter Your Email Address" />
+      <button>Subscribe</button>
+    </div>
+    <p>Copyright © 2014 Two Bytes Consulting Terms & Policies.</p>
+  </footer>
+</div>
 
 <router-outlet></router-outlet>

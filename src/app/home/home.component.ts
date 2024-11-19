@@ -1,22 +1,15 @@
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { RegisterComponent } from '../register/register.component';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-  constructor(private dialog: MatDialog) {}
+export class HomeComponent implements OnInit {
 
-  openRegisterDialog() {
-    const dialogRef = this.dialog.open(RegisterComponent, {
-      width: '400px',
-    });
+  constructor() { }
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Registration form closed');
-    });
+  ngOnInit(): void {
   }
+
 }

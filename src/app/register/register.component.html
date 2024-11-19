@@ -1,5 +1,7 @@
 <h2>Registration Form</h2>
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+<div class="modal-container">
+    
+    <form class="registration-form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
   <div>
     <label>First Name:</label>
     <input matInput formControlName="firstName" />
